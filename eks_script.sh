@@ -28,6 +28,4 @@ export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/doc
 test -n "$AWS_REGION" && echo AWS_REGION is "$AWS_REGION" || echo AWS_REGION is not set
 
 #Validate the IAM role
-aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q && echo "IAM role valid" || echo "IAM role NOT valid"
-
-hello
+aws sts get-caller-identity --query Arn | grep eks_admin -q && echo "IAM role valid" || echo "IAM role NOT valid"

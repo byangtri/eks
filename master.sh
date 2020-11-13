@@ -1,1 +1,1 @@
-bin/bash/etc
+#!/bin/bash
