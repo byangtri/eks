@@ -8,23 +8,23 @@ Prerequisites
 
 #Launching EKS Cluster from AWS CLI
 
-   • `check the AWS CLI version:
+   • `check the AWS CLI version`
    
-   • `Download AWS CLI v2, unzip, and update'
+   • `Download AWS CLI v2, unzip, and update`
    
-   • `Configure the CLI'
+   • `Configure the CLI`
    
-   • `For AWS Access Key ID, paste in the access key ID you copied earlier.'
+   • `For AWS Access Key ID, paste in the access key ID you copied earlier.`
    
-   • `For AWS Secret Access Key, paste in the secret access key you copied earlier.'
+   • `For AWS Secret Access Key, paste in the secret access key you copied earlier.`
    
-   • `For Default region name, enter us-east-1.'
+   • `For Default region name, enter us-east-1.`
    
-   • `For Default output format, enter json.'
+   • `For Default output format, enter json.`
    
-   • `Download kubectl, add permissions to binary, Copy the binary to a directory in your path'
+   • `Download kubectl, add permissions to binary, Copy the binary to a directory in your path`
    
-   • `Download eksctl, Move the extracted binary to /usr/bin'
+   • `Download eksctl, Move the extracted binary to /usr/bin`
 
    • `Creating an AWS EKS cluster`
 
@@ -34,7 +34,7 @@ Prerequisites
 
 # Variables to change:
 
-`vars-eks-vpc.yaml` file defines your VPC network. You can change the CIDR on the file.
+`vars-eks-vpc.yaml` file defines your VPC network. 
 
 ```
 
