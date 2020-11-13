@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # Launching EKS Cluster from AWS CLI
 
