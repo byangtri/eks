@@ -17,7 +17,7 @@ sudo mv /tmp/eksctl /usr/bin
 
 
 sudo chmod +x /usr/local/bin/kubectl
-sudo pip install --upgrade awscli && hash -r
+sudo yum install --upgrade awscli && hash -r
 
 
 #We should configure our aws cli with our current region as default.
