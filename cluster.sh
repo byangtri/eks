@@ -7,7 +7,7 @@ echo "Using AWS profile: $AWS_PROFILE"
 export AWS_REGION=us-east-1
 echo "Using AWS region: $AWS_REGION"
 
-export K8S_VERSION=1.19
+export K8S_VERSION=1.17
 echo "Using Kubernetes versoin: $K8S_VERSION"
 
 # Check any existing EKS cluster
