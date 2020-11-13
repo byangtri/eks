@@ -1,12 +1,9 @@
-# eks
-AWS EKS Script
-
-Prerequisites
+# AWS EKS Script
 
 
 #### Running the AWS EKS from scratch By running the script, the container will do the below tasks:
 
-## Launching EKS Cluster from AWS CLI
+### Launching EKS Cluster from AWS CLI
 
    • `check the AWS CLI version`
    
