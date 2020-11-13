@@ -7,7 +7,7 @@ echo "Using AWS profile: $AWS_PROFILE"
 export AWS_REGION=us-east-1
 echo "Using AWS region: $AWS_REGION"
 
-export K8S_VERSION=1.13
+export K8S_VERSION=1.19
 echo "Using Kubernetes versoin: $K8S_VERSION"
 
 # Check any existing EKS cluster
@@ -15,8 +15,8 @@ eksctl get cluster \
   --profile $AWS_PROFILE \
   --region $AWS_REGION
 
-# use profile "prod8ctive" and region "us-east-1" 
-# use matching kubectl version e.g. 1.13
+# use profile "eks" and region "us-east-1" 
+# use matching kubectl version e.g. 1.19
 #     Refer: https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 eksctl create cluster \
   --profile $AWS_PROFILE \
