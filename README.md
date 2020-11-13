@@ -11,14 +11,6 @@
    
    • `Configure the CLI`
    
-   • `For AWS Access Key ID, paste in the access key ID you copied earlier.`
-   
-   • `For AWS Secret Access Key, paste in the secret access key you copied earlier.`
-   
-   • `For Default region name, enter us-east-1.`
-   
-   • `For Default output format, enter json.`
-   
    • `Download kubectl, add permissions to binary, Copy the binary to a directory in your path`
    
    • `Download eksctl, Move the extracted binary to /usr/bin`
@@ -46,7 +38,7 @@
 
 ```
 
-`eksscript.sh` file is script to build the EKS cluster.
+`eksscript.sh` file is script to run the initial prerequisite.
 
 ```
 
@@ -59,7 +51,7 @@ export node_name=eks-worker
 
 ```
 
-### Run the below command and grab a cup of coffee because it will take some [time]
+### Run the below commands, it will take some [time]
 
 Open the `vars-eks-vpc.yaml` & `cluster.sh` and update with your Variables.
 
