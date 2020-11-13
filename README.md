@@ -4,9 +4,9 @@ AWS EKS Script
 Prerequisites
 
 
-#### Building the AWS EKS from scratch by keeping all dependencies & setup execution inside a container. By building the image, the container will do the below tasks:
+#### Running the AWS EKS from scratch By running the script, the container will do the below tasks:
 
-#Launching EKS Cluster from AWS CLI
+## Launching EKS Cluster from AWS CLI
 
    • `check the AWS CLI version`
    
