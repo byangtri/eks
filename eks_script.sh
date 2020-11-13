@@ -20,7 +20,7 @@ sudo chmod +x /usr/local/bin/kubectl
 sudo pip install --upgrade awscli && hash -r
 
 #install git
-sudo yum -y install jq gettext bash-completion moreutils
+sudo yum install -y git
 
 #Install yq for yaml processing
 echo 'yq() {
