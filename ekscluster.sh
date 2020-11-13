@@ -13,6 +13,7 @@ unzip awscliv2.zip
 which aws
 #Update it
 sudo ./aws/install --bin-dir /usr/bin --install-dir /usr/bin/aws-cli --update
+
 aws --version
 
 #Configure the CLI:
