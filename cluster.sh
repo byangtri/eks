@@ -21,7 +21,7 @@ eksctl get cluster \
 eksctl create cluster \
   --profile $AWS_PROFILE \
   --region $AWS_REGION \
-  --name wp-cluster \
+  --name tricentis-cluster \
   --version $K8S_VERSION \
   --nodegroup-name standard-workers \
   --node-type t3.micro \
