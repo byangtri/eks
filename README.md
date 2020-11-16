@@ -23,7 +23,7 @@
 
 # Variables to change:
 
-`vars-eks-vpc.yaml` file defines your VPC network. 
+`<deployment>.yaml` file 
 
 ```
 
@@ -42,23 +42,19 @@
 
 ```
 
-export region=us-east-1
-export instance_type=t3.medium
-export keyname=eks
-export ami=ami-dea4d5a1
-export cluster_name=eks-master
-export node_name=eks-worker
 
 ```
 
 ### Run the below commands, it will take some [time]
 
-Open the `vars-eks-vpc.yaml` & `cluster.sh` and update with your Variables.
+Open the `<deployment name>.yaml` & `cluster.sh` and update with your Variables.
 
  sudo yum install -y git
 
  git clone https://github.com/branyangeks/eks.git && cd eks
 
  sh eksscript.sh
+ 
+ sh cluster.sh
 
 ```
