@@ -29,6 +29,8 @@ chmod +x ./kubectl
 # Copy the binary to a directory in your path:
 mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
 
+kubectl version --short --client
+
 # Download eksctl:
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 
