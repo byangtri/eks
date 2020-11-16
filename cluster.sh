@@ -7,7 +7,7 @@ echo "Using AWS profile: $AWS_PROFILE"
 export AWS_REGION=us-east-1
 echo "Using AWS region: $AWS_REGION"
 
-export K8S_VERSION=1.17
+export K8S_VERSION=1.18
 echo "Using Kubernetes versoin: $K8S_VERSION"
 
 # Check any existing EKS cluster
@@ -16,7 +16,7 @@ eksctl get cluster \
   --region $AWS_REGION
 
 # use profile "eks" and region "us-east-1" 
-# use matching kubectl version e.g. 1.19
+# use matching kubectl version e.g. 1.18
 #     Refer: https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 eksctl create cluster \
   --profile $AWS_PROFILE \
@@ -48,7 +48,7 @@ kubectl create secret generic mysql-pass --from-literal=password=<your-secret-pa
 # Confirm the secret configuration
 kubectl get secrets
 
-# YAML files for pods : MySQL and WordPress
+# YAML files for pods : 
 curl https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/wordpress/mysql-deployment.yaml > mysql-deployment.yaml
 curl https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/wordpress/wordpress-deployment.yaml > wordpress-deployment.yaml
 
