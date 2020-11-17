@@ -18,17 +18,8 @@ eksctl get cluster \
 # use profile "eks" and region "us-east-1" 
 # use matching kubectl version e.g. 1.17
 #     Refer: https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
-eksctl create cluster \
-  --profile $AWS_PROFILE \
-  --region $AWS_REGION \
-  --name tricentis-cluster \
-  --version $K8S_VERSION \
-  --nodegroup-name standard-workers \
-  --node-type t3.micro \
-  --nodes 3 \
-  --nodes-min 1 \
-  --nodes-max 4 \
-  --node-ami auto
+
+eksctl create cluster --name tricentis-cluster --version $K8S_VERSION --region $AWS_REGION --nodegroup-name standard-workers --node-type t3.micro --nodes 3 --nodes-min 1 --nodes-max 4 --node-ami auto
 
 # After 10 min or so, confirm again for desired EKS cluster
 eksctl get cluster \
@@ -49,20 +40,12 @@ kubectl create secret generic mysql-pass --from-literal=password=<your-secret-pa
 kubectl get secrets
 
 # YAML files for pods : 
-curl https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/wordpress/mysql-deployment.yaml > mysql-deployment.yaml
 curl https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/wordpress/wordpress-deployment.yaml > wordpress-deployment.yaml
 
-### === MySQL pod === ###
-# Create MySQL pod
-kubectl create -f mysql-deployment.yaml
-# Confirm the data volume
-kubectl get pvc
-# Confirm the pod itself
-kubectl get pods
 
-### === WordPress pod === ###
-#  WordPress pod
-kubectl create -f wordpress-deployment.yaml
+### === pod === ###
+#  pod
+kubectl create -f deployment.yaml
 # Confirm!
 kubectl get pvc
 kubectl get pods
@@ -70,4 +53,4 @@ kubectl get pods
 # Check the services
 kubectl get services 
 # OR use : kubectl get services --all-namespaces -o wide
-kubectl get service wordpress # Notice that the Load Balancer is setup
+kubectl get service <pod name> # Notice that the Load Balancer is setup
