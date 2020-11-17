@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tricentis
+  labels:
+    app: nginx
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: nginx
+    tier: frontend
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tricentis-pv-claim
+  labels:
+    app: nginx
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: tricentis
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: frontend
+    spec:
+      containers:
+      - image: <image>
+        name: tricentis
+        env:
+        - name: tricentis_DB_HOST
+          value: tricentis-mysql
+        - name: tricentis_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 80
+          name: tricentis
+        volumeMounts:
+        - name: tricentis-persistent-storage
+          mountPath: /var/www/html
+      volumes:
+      - name: tricentis-persistent-storage
+        persistentVolumeClaim:
+          claimName: tricentis-pv-claim
