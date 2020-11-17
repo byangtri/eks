@@ -1,7 +1,7 @@
 # AWS EKS Script
 
 
-#### Running the AWS EKS from scratch By running the script, the container will do the below tasks:
+#### Running the AWS EKS from scratch. By running the script, the container will do the below tasks:
 
 ### Launching EKS Cluster from AWS CLI
 
