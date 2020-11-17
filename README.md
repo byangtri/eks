@@ -38,7 +38,7 @@
 
 ```
 
-`eksscript.sh` file is script to run the initial prerequisite.
+`setup.sh` file is script to run the initial prerequisite.
 
 ```
 
@@ -53,7 +53,7 @@ Open the `<deployment name>.yaml` & `cluster.sh` and update with your Variables.
 
  git clone https://github.com/branyangeks/eks.git && cd eks
 
- sh eksscript.sh
+ sh setup.sh
  
  sh cluster.sh
 
