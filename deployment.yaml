@@ -14,17 +14,6 @@ spec:
     tier: frontend
   type: LoadBalancer
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: tricentis-pv-claim
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
----
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
@@ -43,7 +32,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: tomcat:latest
+      - image: qasymphony/tomcat
         name: tricentis
         ports:
         - containerPort: 80
