@@ -43,14 +43,6 @@ spec:
       containers:
       - image: <image>
         name: tricentis
-        env:
-        - name: tricentis_DB_HOST
-          value: tricentis-mysql
-        - name: tricentis_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
         ports:
         - containerPort: 80
           name: tricentis
