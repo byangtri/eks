@@ -40,7 +40,7 @@ kubectl create secret generic mysql-pass --from-literal=password=<your-secret-pa
 kubectl get secrets
 
 # YAML files for pods : 
-curl https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/wordpress/wordpress-deployment.yaml > wordpress-deployment.yaml
+curl https://raw.githubusercontent.com/branyangeks/eks/main/deployment.yaml
 
 
 ### === pod === ###
