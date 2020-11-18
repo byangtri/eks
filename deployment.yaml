@@ -37,10 +37,3 @@ spec:
         ports:
         - containerPort: 80
           name: tricentis
-        volumeMounts:
-        - name: tricentis-persistent-storage
-          mountPath: /var/www/html
-      volumes:
-      - name: tricentis-persistent-storage
-        persistentVolumeClaim:
-          claimName: tricentis-pv-claim
