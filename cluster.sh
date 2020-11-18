@@ -22,6 +22,7 @@ eksctl get cluster \
 
 # Typically the config file would be stored as
 #    ~/.kube/config
+# If kubectl having port issues, run: aws eks --region $AWS_REGION update-kubeconfig --name tricentis-cluster
 
 # Get the info of K8s cluster e.g. cluster IP
 kubectl get svc
