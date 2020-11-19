@@ -12,21 +12,14 @@ eksctl get cluster \
   --profile $AWS_PROFILE \
   --region $AWS_REGION
 
-# Delete secret
-kubectl delete secret mysql-pass
-# confirm deletion
-kubectl get secrets
-
-# Delete deployment, service and data-volume
-kubectl delete deployment -l app=nginx
-kubectl delete service -l app=nginx
-kubectl delete pvc -l app=nginx
+# Delete deployment, service
+kubectl delete deployment -l app=tomcat
+kubectl delete service -l app=tomcat
 # confirm deletion
 kubectl get deployments
 kubectl get pods
-kubectl get pvc
 
-# use profile "prod8ctive" and region "us-east-1" 
+# use profile "eks" and region "us-east-1" 
 eksctl delete cluster \
   --profile $AWS_PROFILE \
   --region $AWS_REGION \
