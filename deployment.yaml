@@ -6,13 +6,26 @@ metadata:
     app: tomcat
 spec:
   ports:
-  - protocol: TCP
-    port: 80
+  - protocol: http
+    port: 8080
     targetPort: 8080
   selector:
     app: tomcat
   type: LoadBalancer
 ---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: tricentis-ingress
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /tomcat
+          backend:
+            serviceName: tomcat-service
+            servicePort: 8080
+ ---           
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
@@ -32,5 +45,5 @@ spec:
       - image: qasymphony/tomcat
         name: tricentis
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: tricentis
