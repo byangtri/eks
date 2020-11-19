@@ -6,13 +6,16 @@ Launching EKS Cluster from AWS
 
    • `check the AWS CLI version`
    
+   
    • `Download AWS CLI v2, unzip, and update: `
    
  https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+ 
    
    • `Configure the CLI`
    
    ```   $ aws configure```
+   
    
    • `Download kubectl, add permissions to binary, Copy the binary to a directory in your path`
 https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
