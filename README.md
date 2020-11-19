@@ -67,6 +67,8 @@ Open the `deployment.yaml` & `cluster.sh` and update with your Variables.
  
  sh cluster.sh
 
-### Delete Cluster
+### Delete Resources
 
-eksctl delete cluster --region=<region> --name=tricentis-cluster
+```console
+$ eksctl delete cluster --region=<region> --name=tricentis-cluster
+```
