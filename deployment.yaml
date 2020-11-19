@@ -6,8 +6,8 @@ metadata:
     app: tomcat
 spec:
   ports:
-  - protocol: http
-    port: 8080
+  - protocol: tcp
+    port: 80
     targetPort: 8080
   selector:
     app: tomcat

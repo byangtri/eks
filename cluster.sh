@@ -34,7 +34,6 @@ kubectl create secret generic mysql-pass --from-literal=password=<your-secret-pa
 # Confirm the secret configuration
 kubectl get secrets
 
-
 ### === pod === ###
 #  pod
 kubectl create -f deployment.yaml
