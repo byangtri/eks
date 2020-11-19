@@ -31,7 +31,7 @@ kubectl get nodes
 
 ### === pod === ###
 #  pod
-kubectl create -f deployment.yaml
+kubectl apply -f deployment.yaml
 # Confirm!
 kubectl get pods
 
