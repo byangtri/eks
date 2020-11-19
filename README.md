@@ -1,7 +1,6 @@
 ## AWS EKS Script
 Launching EKS Cluster from AWS
 
-#### Running the AWS EKS from scratch. By running the script, the container will do the below tasks:
 
 ### Prerequisites
 
@@ -22,9 +21,13 @@ Launching EKS Cluster from AWS
    
    https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
 
-   • `Creating an AWS EKS cluster`
+#### Running the AWS EKS from scratch. By running the script, the container will do the below tasks:
+
+   • `Create an AWS EKS cluster`
 
    • `Launch and Configure Amazon EKS Worker Nodes`
+   
+   • `Deploy a Tomcat application and Load Balancer`
 
 
 
