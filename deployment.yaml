@@ -32,11 +32,7 @@ kind: Deployment
 metadata:
   name: tricentis-deployment
 spec:
-  selector:
-    matchLabels:
-      app: tomcat
-  strategy:
-    type: Recreate
+  replicas: 1
   template:
     metadata:
       labels:
