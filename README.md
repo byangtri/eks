@@ -19,6 +19,7 @@
 			`https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html`
    
    • `Download eksctl, Move the extracted binary to /usr/bin`
+		
 		`https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html`
 
    • `Creating an AWS EKS cluster`
@@ -32,24 +33,21 @@
 `deployment.yaml` file 
 
 ```
-
+   $aws configure
    For AWS Access Key ID, paste in the access key ID you copied earlier.
    
    For AWS Secret Access Key, paste in the secret access key you copied earlier.
    
-   For Default region name, enter us-east-1.
+   For Default region name, enter your region.
    
    For Default output format, enter json.
 
 
 ```
 
-`setup.sh` file is script to run the prerequisite on Red Hat Linux.
-
-```
+`setup.sh` file is a script to run the prerequisite on Red Hat Linux.
 
 
-```
 
 ### Run the below commands, it will take some [time]
 
@@ -63,4 +61,3 @@ Open the `<deployment name>.yaml` & `cluster.sh` and update with your Variables.
  
  sh cluster.sh
 
-```
