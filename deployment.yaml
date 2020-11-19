@@ -3,13 +3,14 @@ kind: Service
 metadata:
   name: tricentis-service
   labels:
-    app: tomcat
+    app: nginx
 spec:
   ports:
-  - port: 80
+  - protocol: TCP
+    port: 80
     targetPort: 8080
   selector:
-    app: tomcat
+    app: nginx
   type: LoadBalancer
 ---
 apiVersion: extensions/v1beta1
@@ -22,9 +23,9 @@ spec:
   rules:
   - http:
       paths:
-        - path: /tomcat/?(.*)
+        - path: /nginx/?(.*)
           backend:
-            serviceName: tomcat-service
+            serviceName: nginx-service
             servicePort: 8080
 ---           
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
@@ -35,14 +36,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tomcat
+      app: nginx
   template:
     metadata:
       labels:
-        app: tomcat
+        app: nginx
     spec:
       containers:
-      - image: qasymphony/tomcat
+      - image: qasymphony/nginx
         name: tricentis
         ports:
         - containerPort: 8080
