@@ -3,17 +3,20 @@
 
 #### Running the AWS EKS from scratch. By running the script, the container will do the below tasks:
 
-### Launching EKS Cluster from AWS CLI
+### Launching EKS Cluster from AWS CLI Red hat Linux
 
    • `check the AWS CLI version`
    
-   • `Download AWS CLI v2, unzip, and update`
+   • `Download AWS CLI v2, unzip, and update: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html`
    
-   • `Configure the CLI`
+   • `Configure the CLI
+		```aws configure```
    
-   • `Download kubectl, add permissions to binary, Copy the binary to a directory in your path`
+   • `Download kubectl, add permissions to binary, Copy the binary to a directory in your path
+		https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html`
    
-   • `Download eksctl, Move the extracted binary to /usr/bin`
+   • `Download eksctl, Move the extracted binary to /usr/bin
+		https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html`
 
    • `Creating an AWS EKS cluster`
 
@@ -23,7 +26,7 @@
 
 # Variables to change:
 
-`<deployment>.yaml` file 
+`deployment.yaml` file 
 
 ```
 
@@ -38,7 +41,7 @@
 
 ```
 
-`setup.sh` file is script to run the initial prerequisite.
+`setup.sh` file is script to run the prerequisite on Red Hat Linux.
 
 ```
 
@@ -49,11 +52,11 @@
 
 Open the `<deployment name>.yaml` & `cluster.sh` and update with your Variables.
 
- sudo yum install -y git
+ sudo yum install -y git or sudo apt-get install -y git
 
  git clone https://github.com/branyangeks/eks.git && cd eks
 
- sh setup.sh (if installing dependencies on Red Hat Enterprise Linux
+ sh setup.sh (if installing dependencies on Red Hat Enterprise Linux)
  
  sh cluster.sh
 
