@@ -6,13 +6,12 @@ metadata:
     app: tomcat
 spec:
   ports:
-  - protocol: TCP
-    port: 80
+  - port: 80
     targetPort: 8080
   selector:
     app: tomcat
   type: LoadBalancer
----
+  ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
