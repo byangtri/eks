@@ -22,6 +22,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
 
    • `Download git`
+
 https://git-scm.com/download/linux
 
 #### Running the AWS EKS from scratch. By running the script, the container will do the below tasks:
