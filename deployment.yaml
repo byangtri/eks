@@ -16,7 +16,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  annotations: kubernetes.io/ingress.class: alb
+  annotations:
+    kubernetes.io/ingress.class: alb
     nginx.ingress.kubernetes.io/rewrite-target: /$1
   name: tricentis-ingress
 spec:
@@ -28,7 +29,7 @@ spec:
             serviceName: nginx-service
             servicePort: 8080
 ---           
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tricentis-deployment
