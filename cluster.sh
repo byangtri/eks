@@ -38,4 +38,3 @@ kubectl get pods
 # Check the services
 kubectl get services 
 # OR use : kubectl get services --all-namespaces -o wide
-kubectl get service <pod name> # Notice that the Load Balancer is setup
