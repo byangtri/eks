@@ -58,14 +58,17 @@ https://git-scm.com/download/linux
 ### Run the below commands, it will take some [time]
 
 Open the `deployment.yaml` & `cluster.sh` and update with your Variables.
+```
 
- sudo yum install -y git or sudo apt-get install -y git
+ $ sudo yum install -y git or sudo apt-get install -y git
 
- git clone https://github.com/branyangeks/eks.git && cd eks
+ $ git clone https://github.com/branyangeks/eks.git && cd eks
 
- sh setup.sh (if installing dependencies on Linux)
+ $ sh setup.sh (if installing dependencies on Linux)
  
- sh cluster.sh
+ $ sh cluster.sh
+ 
+ ```
 
 ### Delete Resources
 
