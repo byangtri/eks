@@ -53,7 +53,7 @@ Open the `<deployment name>.yaml` & `cluster.sh` and update with your Variables.
 
  git clone https://github.com/branyangeks/eks.git && cd eks
 
- sh setup.sh
+ sh setup.sh (if installing dependencies on Red Hat Enterprise Linux
  
  sh cluster.sh
 
