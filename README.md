@@ -51,7 +51,7 @@ https://git-scm.com/download/linux
 
 ```
 
-`setup.sh` file is a script to run the prerequisite on Red Hat Linux.
+`setup.sh` file is a script to run the prerequisite on Linux.
 
 
 
@@ -63,7 +63,7 @@ Open the `deployment.yaml` & `cluster.sh` and update with your Variables.
 
  git clone https://github.com/branyangeks/eks.git && cd eks
 
- sh setup.sh (if installing dependencies on Red Hat Enterprise Linux)
+ sh setup.sh (if installing dependencies on Linux)
  
  sh cluster.sh
 
