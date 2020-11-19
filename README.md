@@ -15,11 +15,11 @@ Launching EKS Cluster from AWS
    ```   $ aws configure```
    
    • `Download kubectl, add permissions to binary, Copy the binary to a directory in your path`
-	   https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+      https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
    
    • `Download eksctl, Move the extracted binary to /usr/bin`
    
-      https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
+    https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
 
 #### Running the AWS EKS from scratch. By running the script, the container will do the below tasks:
 
