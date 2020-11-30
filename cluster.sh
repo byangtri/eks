@@ -29,10 +29,21 @@ kubectl get svc
 # Get the info of K8s nodes
 kubectl get nodes
 
+# Generate secret for MySQL db
+kubectl create secret generic mysql-pass --from-literal=password=sampletricentispassword
+# Confirm the secret configuration
+kubectl get secrets
+
 ### === pod === ###
 #  pod
 kubectl apply -f deployment.yaml
 # Confirm!
+kubectl get pods
+
+### === MySQL pod === ###
+# Create MySQL pod
+kubectl create -f mysql-deployment.yaml
+# Confirm the pod itself
 kubectl get pods
 
 # Check the services
