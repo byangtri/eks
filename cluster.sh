@@ -42,7 +42,7 @@ kubectl get pods
 
 ### === MySQL pod === ###
 # Create MySQL pod
-kubectl create -f mysql-deployment.yaml
+kubectl create -f postgres-deployment.yaml
 # Confirm the pod itself
 kubectl get pods
 
