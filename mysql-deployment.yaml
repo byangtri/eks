@@ -1,26 +1,36 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: tricentis-mysql
+  name: tricentis-postgres
   labels:
     app: tomcat
 spec:
   ports:
-    - port: 3306
+    - port: 5432
+      nodePort: 30432
+  type: NodePort
   selector:
     app: tomcat
-    tier: mysql
+    tier: postgres
   clusterIP: None
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: aws-efs
+provisioner: myefs/aws-efs
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pv-claim
+  name: efs-postgres
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "aws-efs"
   labels:
     app: tomcat
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 20Gi
@@ -28,38 +38,38 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: tricentis-mysql
+  name: tricentis-postgres
   labels:
     app: tomcat
 spec:
   selector:
     matchLabels:
       app: tomcat
-      tier: mysql
+      tier: postgres
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
         app: tomcat
-        tier: mysql
+        tier: postgres
     spec:
       containers:
-      - image: mysql:5.6
-        name: mysql
+      - image: postgres:latest
+        name: postgres
         env:
-        - name: MYSQL_ROOT_PASSWORD
+        - name: POSTGRES_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
+              name: postgres-pass
               key: password
         ports:
-        - containerPort: 3306
-          name: mysql
+        - containerPort: 5432
+          name: postgres
         volumeMounts:
-        - name: mysql-persistent-storage
-          mountPath: /var/lib/mysql
+        - name: postgres-persistent-storage
+          mountPath: /var/lib/postgresql/data
       volumes:
-      - name: mysql-persistent-storage
+      - name: postgres-persistent-storage
         persistentVolumeClaim:
-          claimName: mysql-pv-claim
+          claimName: efs-postgres
