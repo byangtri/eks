@@ -6,7 +6,6 @@ kind: KustomizationsecretGenerator:
       - pgadmin-pass=redhat
 resources:
     - my-efs-provisioner.yml
-    - my-rbac.yml
     - my-storage.yml
     - deploy-postgres.yml
-    - deploy-pgadmin.yml
+    - deploy-postgresadmin.yml
