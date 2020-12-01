@@ -7,5 +7,3 @@ nodeGroups:
    - name: ng1
      desiredCapacity: 3
      instanceType: t2.micro
-     ssh:
-        publicKeyName: Mainkey
