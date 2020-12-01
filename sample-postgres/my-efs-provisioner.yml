@@ -21,7 +21,7 @@ spec:
             - name: FILE_SYSTEM_ID
               value: fs-5729a386   #your efs id
             - name: AWS_REGION
-              value: ap-south-1
+              value: us-east-1
             - name: PROVISIONER_NAME
               value: myefs/aws-efs
           volumeMounts:
@@ -30,5 +30,5 @@ spec:
       volumes:
         - name: pv-volume
           nfs:
-            server: fs-5729a386.efs.ap-south-1.amazonaws.com
+            server: fs-5729a386.efs.us-east-1.amazonaws.com
             path: /
