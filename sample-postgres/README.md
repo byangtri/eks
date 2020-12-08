@@ -4,4 +4,5 @@
 ### Prerequisites
 
    • `Launching an Amazon EKS Cluster`
+   
    • `Download and configure eksctl`
