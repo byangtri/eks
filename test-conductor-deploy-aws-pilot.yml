@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tricentis-service
+  labels:
+    app: test-conductor
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  selector:
+    app: test-conductor
+  type: LoadBalancer
+---           
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-conductor-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-conductor
+  template:
+    metadata:
+      labels:
+        app: test-conductor
+    spec:
+      containers:
+      - image: 890882436612.dkr.ecr.us-east-2.amazonaws.com/test-conductor-java-8-pilot
+        imagePullPolicy: Always
+        name: tricentis
+        ports:
+        - containerPort: 8080
+          name: tricentis
+        resources:
+          requests:
+            memory: "2048Mi"
+            cpu: "1"
+          limits:
+            memory: "2048Mi"
+            cpu: "1"
