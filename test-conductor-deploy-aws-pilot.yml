@@ -28,7 +28,7 @@ spec:
         app: test-conductor
     spec:
       containers:
-      - image: 890882436612.dkr.ecr.us-east-2.amazonaws.com/test-conductor-java-8-pilot
+      - image: 890882436612.dkr.ecr.us-east-2.amazonaws.com/test-conductor-java-8-pilot:latest
         imagePullPolicy: Always
         name: tricentis
         ports:
