@@ -9,8 +9,7 @@ pipeline {
 
       }
       steps {
-        sh '''docker login https://agiletrailblazers.jfrog.io/ -u $user -p $pass
-docker build'''
+        sh 'docker login https://agiletrailblazers.jfrog.io/ -u $user -p $pass'
       }
     }
 
