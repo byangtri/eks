@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'https://agiletrailblazers.jfrog.io/demorepo/agiletrailblazers:latest'
+      image 'agiletrailblazers.jfrog.io/demorepo/agiletrailblazers:latest'
     }
 
   }
