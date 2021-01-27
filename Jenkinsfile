@@ -4,13 +4,13 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh 'docker login agiletrailblazers.jfrog.io -u $user -p $pass'
+        sh 'docker login agiletrailblazers.jfrog.io -u $username -p $pass'
       }
     }
 
   }
   environment {
-    user = 'subbu'
+    username = 'subbu'
     pass = 'Subbu123'
   }
 }
