@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        sh 'docker login -u subbu -p Subbu123'
+        sh 'docker login'
       }
     }
 
