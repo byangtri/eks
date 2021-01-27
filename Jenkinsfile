@@ -9,7 +9,8 @@ pipeline {
 
       }
       steps {
-        sh 'docker build'
+        sh '''docker login agiletrailblazers.jfrog.io -u $user -p $pass
+docker build'''
       }
     }
 
@@ -25,5 +26,9 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    user = 'subbu'
+    pass = 'Subbu123'
   }
 }
