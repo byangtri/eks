@@ -1,15 +1,27 @@
 pipeline {
   agent any
   stages {
-    stage('myStage') {
+    stage('Build') {
+      agent {
+        docker {
+          image 'agiletrailblazers.jfrog.io/demorepo/agiletrailblazers'
+        }
+
+      }
       steps {
-        sh 'checkout scm'
+        sh 'docker build'
       }
     }
 
-    stage('Build') {
+    stage('Docker Run') {
+      agent {
+        docker {
+          image 'agiletrailblazers.jfrog.io/demorepo/agiletrailblazers'
+        }
+
+      }
       steps {
-        sh 'ls'
+        sh 'docker run -p 8080:8080 '
       }
     }
 
