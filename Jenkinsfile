@@ -2,14 +2,9 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      agent {
-        docker {
-          image 'agiletrailblazers.jfrog.io/demorepo/agiletrailblazers'
-        }
-
-      }
+      agent any
       steps {
-        sh 'docker login'
+        sh 'docker login agiletrailblazers.jfrog.io -u $user -p $pass'
       }
     }
 
