@@ -4,8 +4,7 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh '''sudo systemctl start docker
-docker login agiletrailblazers.jfrog.io -u $jfroguser -p $pass'''
+        sh 'docker login agiletrailblazers.jfrog.io -u $jfroguser -p $pass'
       }
     }
 
