@@ -1,17 +1,20 @@
 pipeline {
-  agent any
-  stages {
-    stage('myStage') {
-      steps {
-        sh 'checkout scm'
-      }
+  agent {
+    docker {
+      image 'agiletrailblazers.jfrog.io/demorepo/agiletrailblazers:latest'
     }
 
+  }
+  stages {
     stage('Build') {
       steps {
-        sh 'ls'
+        sh 'docker build'
       }
     }
 
+  }
+  environment {
+    jfroguser = 'subbu'
+    pass = 'Subbu123'
   }
 }
