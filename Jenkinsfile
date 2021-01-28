@@ -14,7 +14,7 @@ pipeline {
 
   }
   environment {
-    jfroguser = 'subbu'
-    pass = 'Subbu123'
+    jfroguser = 'jenkins'
+    pass = 'Agile2021'
   }
 }
