@@ -30,7 +30,11 @@ spec:
         app: test-conductor
     spec:
       containers:
+<<<<<<< HEAD
       - image: agiletrailblazers.jfrog.io/demorepo/agiletrailblazers:latest
+=======
+      - image: 890882436612.dkr.ecr.us-east-2.amazonaws.com/test-conductor-java-8-pilot:latest
+>>>>>>> 5864e8e54e7ed54265281ad0b2b903990e98642e
         imagePullPolicy: Always
         name: tricentis
         ports:
