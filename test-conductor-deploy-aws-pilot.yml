@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: tricentis-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
   labels:
     app: test-conductor
 spec:
@@ -28,7 +30,7 @@ spec:
         app: test-conductor
     spec:
       containers:
-      - image: 890882436612.dkr.ecr.us-east-2.amazonaws.com/test-conductor-java-8-pilot
+      - image: agiletrailblazers.jfrog.io/demorepo/agiletrailblazers:latest
         imagePullPolicy: Always
         name: tricentis
         ports:
@@ -36,8 +38,10 @@ spec:
           name: tricentis
         resources:
           requests:
-            memory: "2048Mi"
+            memory: "4096Mi"
             cpu: "1"
           limits:
-            memory: "2048Mi"
+            memory: "4096Mi"
             cpu: "1"
+      imagePullSecrets:
+      - name: qtestjfrog
